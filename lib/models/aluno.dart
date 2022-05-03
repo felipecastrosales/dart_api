@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:collection/collection.dart';
+
 import 'curso.dart';
 import 'endereco.dart';
 
@@ -17,4 +21,31 @@ class Aluno {
     required this.endereco,
     required this.cursos,
   });
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'nome': nome,
+      'idade': idade,
+      'nomeCursos': nomeCursos,
+      'endereco': endereco.toMap(),
+      'cursos': cursos.map((curso) => curso.toMap()).toList(),
+    };
+  }
+
+  factory Aluno.fromMap(Map<String, dynamic> map) {
+    return Aluno(
+      id: map['id'] ?? '',
+      nome: map['nome'] ?? '',
+      idade: map['idade'],
+      nomeCursos: map['nomeCursos'],
+      endereco: Endereco.fromMap(map['endereco']),
+      cursos:
+          map['cursos'].map<Curso>((curso) => Curso.fromMap(curso)).toList(),
+    );
+  }
+
+  String toJson() => jsonEncode(toMap());
+
+  factory Aluno.fromJson(String source) => Aluno.fromMap(jsonDecode(source));
 }

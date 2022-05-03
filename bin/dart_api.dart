@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:developer' as developer;
 
+import 'package:dart_api/models/telefone.dart';
+
 void main(List<String> arguments) {
   final cidadeJson = '''
     [{ 
@@ -42,11 +44,20 @@ void main(List<String> arguments) {
     developer.log('${city['regiao']['nome']}');
   });
 
-  final cidadeMapJson = {
-    'id': 1,
-    'nome': 'Uruburetama',
-    'uf': 'CE'
-  };
+  final cidadeMapJson = {'id': 1, 'nome': 'Uruburetama', 'uf': 'CE'};
   developer.log(json.encode(cidadeMapJson));
   developer.log('${[json.encode(cidadeMapJson)]}');
+
+  final telefoneJson = '''
+    {  
+      "ddd":11,
+      "telefone":"1216534694"
+    }
+    ''';
+
+  final telefone = Telefone.fromJson(telefoneJson);
+  developer.log('${telefone.ddd}');
+  developer.log(telefone.telefone);
+  developer.log(telefone.toJson());
+  developer.log('${telefone.toMap()}');
 }
