@@ -9,7 +9,7 @@ class Telefone {
     required this.telefone,
   });
 
-  // éun metodo que pega o objeto e transforma en um Map<String, dynamic>
+  // é um metodo que pega o objeto e transforma en um Map<String, dynamic>
   Map<String, dynamic> toMap() {
     return {
       'ddd': ddd,
@@ -31,4 +31,7 @@ class Telefone {
   // é um método que baseado em umu string json retorna um objeto Telefone
   factory Telefone.fromJson(String source) =>
       Telefone.fromMap(jsonDecode(source));
+
+  @override
+  String toString() => 'Telefone(ddd: $ddd, telefone: $telefone)';
 }

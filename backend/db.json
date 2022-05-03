@@ -6,7 +6,10 @@
             "idade": 18,
             "nomeCursos": [
                 "Responsividade no Flutter",
-                "Null Safety"
+                "Null Safety",
+                "Dart",
+                "Dart",
+                "Dart"
             ],
             "cursos": [
                 {
@@ -24,18 +27,18 @@
                 "rua": "Rua XXX",
                 "numero": 327,
                 "CEP": "6265000",
-                "telefone": {
-                    "ddd": 85,
-                    "telefone": "8540028222"
-                },
                 "cidade": {
                     "id": 1,
                     "nome": "Uruburetama"
+                },
+                "telefone": {
+                    "ddd": 85,
+                    "telefone": "8540028222"
                 }
             }
         },
         {
-            "id": "1",
+            "id": "2",
             "nome": "Karol B",
             "idade": 18,
             "nomeCursos": [
@@ -67,6 +70,39 @@
                     "nome": "Tururu"
                 }
             }
+        },
+        {
+            "id": "cce53a50-cb36-11ec-a19f-b90142c06cb2",
+            "nome": "Luis Castro",
+            "idade": null,
+            "nomeCursos": [
+                "Fundamentos"
+            ],
+            "endereco": {
+                "rua": "Aldeota",
+                "numero": 169,
+                "CEP": "59000-000",
+                "cidade": {
+                    "id": 85,
+                    "nome": "Fortaleza"
+                },
+                "telefone": {
+                    "ddd": 85,
+                    "telefone": "85999999999"
+                }
+            },
+            "cursos": [
+                {
+                    "id": 1,
+                    "nome": "Flutter",
+                    "isAluno": true
+                },
+                {
+                    "id": 2,
+                    "nome": "Dart",
+                    "isAluno": false
+                }
+            ]
         }
     ]
 }

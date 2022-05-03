@@ -28,4 +28,7 @@ class Curso {
   }
 
   String toJson() => jsonEncode(toMap());
+
+  @override
+  String toString() => 'Curso(id: $id, nome: $nome, isAluno: $isAluno)';
 }

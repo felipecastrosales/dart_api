@@ -1,22 +1,20 @@
 import 'dart:convert';
 
-import 'package:collection/collection.dart';
-
 import 'curso.dart';
 import 'endereco.dart';
 
 class Aluno {
-  String id;
+  String? id;
   String nome;
-  int idade;
+  int? idade;
   List<String> nomeCursos;
   Endereco endereco;
   List<Curso> cursos;
 
   Aluno({
-    required this.id,
+    this.id,
     required this.nome,
-    required this.idade,
+    this.idade,
     required this.nomeCursos,
     required this.endereco,
     required this.cursos,
@@ -38,7 +36,8 @@ class Aluno {
       id: map['id'] ?? '',
       nome: map['nome'] ?? '',
       idade: map['idade'],
-      nomeCursos: map['nomeCursos'],
+      // nomeCursos: List<String>.from(map['nomeCursos']),
+      nomeCursos: map['nomeCursos'].cast<String>(),
       endereco: Endereco.fromMap(map['endereco']),
       cursos:
           map['cursos'].map<Curso>((curso) => Curso.fromMap(curso)).toList(),
@@ -48,4 +47,9 @@ class Aluno {
   String toJson() => jsonEncode(toMap());
 
   factory Aluno.fromJson(String source) => Aluno.fromMap(jsonDecode(source));
+
+  @override
+  String toString() {
+    return 'Aluno(id: $id, nome: $nome, idade: $idade, nomeCursos: $nomeCursos, endereco: $endereco, cursos: $cursos)';
+  }
 }
