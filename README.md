@@ -5,7 +5,7 @@
 <h2 align="center">📖 About</h2>
 
    <p align="center">
-      Learning a little more about API consumptions with Dart.<br><br>
+      Learning a little more about API consumptions with Dart.<br>
       In this project, I used <a href="https://pub.dev/packages/http">http</a> and <a href="https://pub.dev/packages/dartion">dartion</a> to carry out this study.<br>
       See this project, see this code.<br>
   </p>
