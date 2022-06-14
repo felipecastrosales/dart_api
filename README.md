@@ -2,7 +2,7 @@
 
 ---
 
-<h2>📖 About</h2>
+<h2 align="center">📖 About</h2>
 
    <p align="center">
       Learning a little more about API consumptions with Dart.<br><br>
